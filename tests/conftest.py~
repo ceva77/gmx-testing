@@ -42,6 +42,7 @@ def rich_whale(whale, usdc, gmx, esgmx):
     usdc._mint_for_testing(whale, 1_000_000 * 10**usdc.decimals())
     gmx._mint_for_testing(whale, 1000 * 10**gmx.decimals())
     esgmx._mint_for_testing(whale, 1000 * 10**esgmx.decimals())
+    
 
     return whale 
 

@@ -4,6 +4,10 @@ from scripts.helpers import *
 import os
 
 
+usdc = Contract('arb_usdc')
+whale = accounts[0]
+amount = 1_000_000 * 10**usdc.decimals()
+
 def mint(token, account, amount):
     token = MintableForkToken(token.address)
 
@@ -13,9 +17,5 @@ def mint(token, account, amount):
 
 
 def main():
-    usdc = Contract('arb_usdc')
-    whale = accounts[0]
-    amount = 1_000_000 * 10**usdc.decimals()
-
     amount_minted = mint(usdc, whale, amount)
     print(f"Minted {amount_minted / 10**usdc.decimals()} {usdc.name()} to {whale.address}")
